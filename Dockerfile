@@ -22,7 +22,6 @@ RUN apt-get update \
 	apt-utils \
 	gnupg \
 	redis-tools \
-	mysql-client \
 	git \
 	vim \
 	wget \
@@ -32,6 +31,7 @@ RUN apt-get update \
 	unzip \
 	tar \
 	cron \
+	rsync \
 	bash-completion \
 	&& apt-get clean
 
@@ -45,7 +45,6 @@ RUN docker-php-ext-configure \
   	bcmath \
   	intl \
   	mbstring \
-  	mcrypt \
   	pdo_mysql \
   	soap \
   	xsl \
@@ -64,6 +63,7 @@ RUN apt-get update \
 # Install Node, NVM, NPM and Grunt
 
 RUN curl -sL https://deb.nodesource.com/setup_6.x | bash - \
+    && apt-get install -y npm \
   	&& apt-get install -y nodejs build-essential \
     && curl https://raw.githubusercontent.com/creationix/nvm/v0.16.1/install.sh | sh \
     && npm i -g grunt-cli yarn
