@@ -99,6 +99,10 @@ RUN wget https://files.magerun.net/n98-magerun2.phar \
 	&& chmod +x ./n98-magerun2.phar \
 	&& mv ./n98-magerun2.phar /usr/local/bin/
 
+# Install Bitbucket CMD - https://github.com/danshumaker/bitbucket-cmd
+
+RUN npm install -g bitbucket-cmd
+
 # Configuring system
 
 ADD .docker/config/php.ini /usr/local/etc/php/php.ini
