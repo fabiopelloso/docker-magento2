@@ -72,7 +72,7 @@ RUN curl -sL https://deb.nodesource.com/setup_6.x | bash - \
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin/ --filename=composer
 RUN composer self-update --1
-RUN composer global require hirak/prestissimo - prestissimo is not necessary for composer 2.0 (https://github.com/hirak/prestissimo/issues/233)
+RUN composer global require hirak/prestissimo
 
 # Install Code Sniffer
 
